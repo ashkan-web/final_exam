@@ -5,3 +5,904 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 2619)
 
 
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "starting_bid" float, "active_bid" float, "reserve_price" float, "end_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+Started GET "/" for 127.0.0.1 at 2020-06-08 12:39:40 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (68.9ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "starting_bid" float, "active_bid" float, "reserve_price" float, "end_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+Started GET "/" for 127.0.0.1 at 2020-06-08 12:40:52 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-06-08 12:40:54 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-06-08 12:40:55 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2020-06-08 12:41:01 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "starting_bid" float, "active_bid" float, "reserve_price" float, "end_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "auctions" already exists
+):
+  
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:92:in `exec'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:92:in `block (2 levels) in execute'
+activesupport (6.0.3.1) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.0.3.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.0.3.1) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:91:in `block in execute'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:722:in `block (2 levels) in log'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:721:in `block in log'
+activesupport (6.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:712:in `log'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:90:in `execute'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:315:in `create_table'
+activerecord (6.0.3.1) lib/active_record/migration.rb:890:in `block in method_missing'
+activerecord (6.0.3.1) lib/active_record/migration.rb:858:in `block in say_with_time'
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.0.3.1) lib/active_record/migration.rb:858:in `say_with_time'
+activerecord (6.0.3.1) lib/active_record/migration.rb:879:in `method_missing'
+db/migrate/20200608175601_create_auctions.rb:3:in `change'
+activerecord (6.0.3.1) lib/active_record/migration.rb:828:in `exec_migration'
+activerecord (6.0.3.1) lib/active_record/migration.rb:812:in `block (2 levels) in migrate'
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.0.3.1) lib/active_record/migration.rb:811:in `block in migrate'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:471:in `with_connection'
+activerecord (6.0.3.1) lib/active_record/migration.rb:810:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1002:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1310:in `block in execute_migration_in_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1361:in `block in ddl_transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:280:in `block in transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:280:in `block in within_new_transaction'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:278:in `within_new_transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:280:in `transaction'
+activerecord (6.0.3.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1361:in `ddl_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1309:in `execute_migration_in_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1281:in `block in migrate_without_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1280:in `each'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1280:in `migrate_without_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1229:in `block in migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1382:in `with_advisory_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1229:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1061:in `up'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1036:in `migrate'
+activerecord (6.0.3.1) lib/active_record/tasks/database_tasks.rb:238:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:135:in `block in <class:PendingMigrationError>'
+activesupport (6.0.3.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:19:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5012.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "biddr_api_development"[0m
+Started POST "/rails/actions" for 127.0.0.1 at 2020-06-08 12:43:18 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "starting_bid" float, "active_bid" float, "reserve_price" float, "end_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "auctions" already exists
+):
+  
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:92:in `exec'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:92:in `block (2 levels) in execute'
+activesupport (6.0.3.1) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.0.3.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.0.3.1) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:91:in `block in execute'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:722:in `block (2 levels) in log'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:721:in `block in log'
+activesupport (6.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:712:in `log'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:90:in `execute'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:315:in `create_table'
+activerecord (6.0.3.1) lib/active_record/migration.rb:890:in `block in method_missing'
+activerecord (6.0.3.1) lib/active_record/migration.rb:858:in `block in say_with_time'
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.0.3.1) lib/active_record/migration.rb:858:in `say_with_time'
+activerecord (6.0.3.1) lib/active_record/migration.rb:879:in `method_missing'
+db/migrate/20200608175601_create_auctions.rb:3:in `change'
+activerecord (6.0.3.1) lib/active_record/migration.rb:828:in `exec_migration'
+activerecord (6.0.3.1) lib/active_record/migration.rb:812:in `block (2 levels) in migrate'
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.0.3.1) lib/active_record/migration.rb:811:in `block in migrate'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:471:in `with_connection'
+activerecord (6.0.3.1) lib/active_record/migration.rb:810:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1002:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1310:in `block in execute_migration_in_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1361:in `block in ddl_transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:280:in `block in transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:280:in `block in within_new_transaction'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:278:in `within_new_transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:280:in `transaction'
+activerecord (6.0.3.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1361:in `ddl_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1309:in `execute_migration_in_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1281:in `block in migrate_without_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1280:in `each'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1280:in `migrate_without_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1229:in `block in migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1382:in `with_advisory_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1229:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1061:in `up'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1036:in `migrate'
+activerecord (6.0.3.1) lib/active_record/tasks/database_tasks.rb:238:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:135:in `block in <class:PendingMigrationError>'
+activesupport (6.0.3.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:19:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-06-08 12:43:26 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2020-06-08 12:43:31 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "starting_bid" float, "active_bid" float, "reserve_price" float, "end_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "auctions" already exists
+):
+  
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:92:in `exec'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:92:in `block (2 levels) in execute'
+activesupport (6.0.3.1) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.0.3.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.0.3.1) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:91:in `block in execute'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:722:in `block (2 levels) in log'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:721:in `block in log'
+activesupport (6.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:712:in `log'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:90:in `execute'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:315:in `create_table'
+activerecord (6.0.3.1) lib/active_record/migration.rb:890:in `block in method_missing'
+activerecord (6.0.3.1) lib/active_record/migration.rb:858:in `block in say_with_time'
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.0.3.1) lib/active_record/migration.rb:858:in `say_with_time'
+activerecord (6.0.3.1) lib/active_record/migration.rb:879:in `method_missing'
+db/migrate/20200608175601_create_auctions.rb:3:in `change'
+activerecord (6.0.3.1) lib/active_record/migration.rb:828:in `exec_migration'
+activerecord (6.0.3.1) lib/active_record/migration.rb:812:in `block (2 levels) in migrate'
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.0.3.1) lib/active_record/migration.rb:811:in `block in migrate'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:471:in `with_connection'
+activerecord (6.0.3.1) lib/active_record/migration.rb:810:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1002:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1310:in `block in execute_migration_in_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1361:in `block in ddl_transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:280:in `block in transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:280:in `block in within_new_transaction'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:278:in `within_new_transaction'
+activerecord (6.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:280:in `transaction'
+activerecord (6.0.3.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1361:in `ddl_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1309:in `execute_migration_in_transaction'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1281:in `block in migrate_without_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1280:in `each'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1280:in `migrate_without_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1229:in `block in migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1382:in `with_advisory_lock'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1229:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1061:in `up'
+activerecord (6.0.3.1) lib/active_record/migration.rb:1036:in `migrate'
+activerecord (6.0.3.1) lib/active_record/tasks/database_tasks.rb:238:in `migrate'
+activerecord (6.0.3.1) lib/active_record/migration.rb:135:in `block in <class:PendingMigrationError>'
+activesupport (6.0.3.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:19:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "starting_bid" float, "active_bid" float, "reserve_price" float, "end_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "biddr_api_jun_development"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "biddr_api_jun_test"[0m
+  [1m[35m (430.4ms)[0m  [1m[35mCREATE DATABASE "biddr_api_jun_development" ENCODING = 'unicode'[0m
+  [1m[35m (360.3ms)[0m  [1m[35mCREATE DATABASE "biddr_api_jun_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8770520838119026665)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20200608175601)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "starting_bid" float, "active_bid" float, "reserve_price" float, "end_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200608175601"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBids (20200608175653)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "bids" ("id" bigserial primary key, "amount" float, "auction_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7332d1a025"
+FOREIGN KEY ("auction_id")
+  REFERENCES "auctions" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_bids_on_auction_id" ON "bids"  ("auction_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200608175653"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-08 20:12:13.154152"], ["updated_at", "2020-06-08 20:12:13.154152"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8770520838119026665)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-06-08 13:12:41 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ashkan/.rvm/gems/ruby-2.6.3/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ashkan/.rvm/gems/ruby-2.6.3/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.6ms | Allocations: 315)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 1597)
+
+
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:14:35 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:48: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:70: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:48: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:70: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:48: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:70: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:48: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:70: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:18:14 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:18:15 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:22:39 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:24:22 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:24:25 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:24:26 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:25:34 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:25:35 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:26:00 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:26:02 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:26:04 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:26:06 -0700
+  
+SyntaxError (/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+...tle, :description, :end_date, : reserve_price)
+...                              ^
+/home/ashkan/code_core/Final_Exam/biddr_api/app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/auctions_controller.rb:49: syntax error, unexpected ':', expecting ')'
+app/controllers/api/v1/auctions_controller.rb:71: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:28:08 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:37:02 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:37:04 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:37:06 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:37:22 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:37:24 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:37:26 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:37:27 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:40:41 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:40:43 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions/:id" for 127.0.0.1 at 2020-06-08 14:42:59 -0700
+  
+NameError (uninitialized constant Api::ApplicationController):
+  
+app/controllers/api/v1/auctions_controller.rb:1:in `<main>'
+Started GET "/api/v1/auctions/:id" for 127.0.0.1 at 2020-06-08 14:43:46 -0700
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>":id"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3931)
+
+
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 14:49:26 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms | Allocations: 7148)
+
+
+  
+NoMethodError (undefined method `viewable' for #<Class:0x000055a3d983f3b0>):
+  
+app/controllers/api/v1/auctions_controller.rb:4:in `index'
+Started GET "/api/v1/auctions/14" for 127.0.0.1 at 2020-06-08 14:50:52 -0700
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"14"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 218)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2020-06-08 15:02:24 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3332)
+
+
+  
+NoMethodError (undefined method `viewable' for #<Class:0x000055a3d983f3b0>):
+  
+app/controllers/api/v1/auctions_controller.rb:4:in `index'
+Started GET "/api/v1/auctions/10" for ::1 at 2020-06-08 15:05:04 -0700
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"10"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 217)
+
+
+Started GET "/api/v1/auctions/:id" for 127.0.0.1 at 2020-06-08 15:41:25 -0700
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>":id"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3519)
+
+
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 15:41:32 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 4666)
+
+
+  
+NoMethodError (undefined method `viewable' for #<Class:0x00007f5850378098>):
+  
+app/controllers/api/v1/auctions_controller.rb:4:in `index'
+Started GET "/api/v1/auctions" for 127.0.0.1 at 2020-06-08 15:42:32 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (2.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 31ms (Views: 16.0ms | ActiveRecord: 10.8ms | Allocations: 4758)
+
+
